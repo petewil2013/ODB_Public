@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 48" fill="none" stroke="#4A3B2E" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Simple wheat stalk - reverent, colonial style -->
+  <path d="M16 2v44"/>
+  <path d="M16 6c0 0-4 2-4 6s4 6 4 6 4-2 4-6-4-6-4-6z"/>
+  <path d="M16 14c0 0-4 2-4 6s4 6 4 6 4-2 4-6-4-6-4-6z"/>
+  <path d="M16 22c0 0-4 2-4 6s4 6 4 6 4-2 4-6-4-6-4-6z"/>
+  <path d="M16 30c0 0-3 1.5-3 4.5s3 4.5 3 4.5 3-1.5 3-4.5-3-4.5-3-4.5z"/>
+  <ellipse cx="16" cy="4" rx="2.5" ry="1.5" fill="#4A3B2E" opacity="0.7"/>
+</svg>
