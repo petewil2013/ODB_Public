@@ -191,6 +191,14 @@ a:hover {
   max-width: 36rem;
 }
 
+.hero-value-prop {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--brick-red);
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.03em;
+}
+
 .hero-subtitle {
   font-size: 0.8125rem;
   font-weight: 500;
@@ -211,8 +219,16 @@ a:hover {
 .hero-tagline {
   font-family: var(--font-serif);
   font-size: 1.25rem;
-  font-style: italic;
+  font-weight: 500;
   color: var(--brick-red);
+  margin: 0 0 0.25rem;
+}
+
+.hero-subline {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-style: italic;
+  color: var(--brown-light);
   margin: 0 0 1rem;
 }
 
@@ -228,6 +244,12 @@ a:hover {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.hero-cta-hint {
+  font-size: 0.8125rem;
+  color: var(--brown-light);
+  margin: 0.75rem 0 0;
 }
 
 .hero-wheat {
@@ -427,10 +449,58 @@ a:hover {
   margin: 0 0 1rem;
 }
 
+.order-cta-hint {
+  font-size: 0.8125rem;
+  color: var(--brick-red);
+  font-weight: 500;
+  margin: 0.5rem 0 0 !important;
+}
+
 .order-note {
   font-size: 0.875rem;
   color: var(--brown-light);
   margin-top: 1.5rem !important;
+}
+
+/* Testimonials / Social Proof */
+.testimonials {
+  padding: 5rem 0;
+  background: var(--cream);
+}
+
+.testimonials-grid {
+  display: grid;
+  gap: 2rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.testimonial {
+  background: var(--cream-dark);
+  padding: 1.5rem;
+  border-radius: 4px;
+  border-left: 3px solid var(--warm-sepia);
+  margin: 0;
+}
+
+.testimonial p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.0625rem;
+  margin: 0 0 0.75rem;
+  color: var(--iron-brown);
+}
+
+.testimonial cite {
+  font-size: 0.8125rem;
+  color: var(--brown-light);
+  font-style: normal;
 }
 
 /* Contact */

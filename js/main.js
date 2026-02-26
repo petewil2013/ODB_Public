@@ -7,6 +7,18 @@ document.addEventListener('DOMContentLoaded', function () {
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
 
+  // Analytics: track Order CTA clicks (works with GA4 when uncommented)
+  ['orderCtaBtn', 'orderStorefrontBtn'].forEach(function (id) {
+    var btn = document.getElementById(id);
+    if (btn) {
+      btn.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_order_cta', { event_category: 'conversion', event_label: id });
+        }
+      });
+    }
+  });
+
   // Mobile nav toggle
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', function () {
@@ -64,6 +76,9 @@ document.addEventListener('DOMContentLoaded', function () {
           fetch(action, { method: 'POST', body: formData })
             .then(function (r) { return r.text(); })
             .then(function (html) {
+              if (typeof gtag === 'function') {
+                gtag('event', 'form_submit_success', { event_category: 'conversion', event_label: 'contact_form' });
+              }
               document.open();
               document.write(html);
               document.close();

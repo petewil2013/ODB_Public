@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Daily Bread | Artisan Sourdough Bakery</title>
-  <meta name="description" content="Our Daily Bread — Catholic-inspired artisan sourdough bakery. Naturally leavened bread that feeds the spirit as much as the body. New England.">
+  <title>Artisan Sourdough Bakery | Our Daily Bread – New England</title>
+  <meta name="description" content="Pre-order naturally leavened sourdough from Our Daily Bread bakery in Dover, NH — fresh, handcrafted loaves baked with reverence and community spirit. Artisan bakery preorder bread for pickup in New Hampshire.">
+  <meta name="keywords" content="artisan sourdough, New England bakery, fresh bread pre-order, Dover NH bakery, naturally leavened bread, artisan bread Dover NH, sourdough pickup NH">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="canonical" href="https://odbread.com/">
+  <meta property="og:title" content="Artisan Sourdough Bakery | Our Daily Bread – New England">
+  <meta property="og:description" content="Pre-order naturally leavened sourdough from Our Daily Bread bakery in Dover, NH — fresh, handcrafted loaves baked weekly.">
+  <meta property="og:type" content="website">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
       <a href="#" class="logo">
-        <img src="images/our-daily-bread-logo.png" alt="Our Daily Bread" class="logo-img">
+        <img src="images/our-daily-bread-logo.png" alt="Our Daily Bread — artisan sourdough bakery logo, Dover NH" class="logo-img" width="120" height="52">
         Our Daily Bread
       </a>
       <button class="nav-toggle" aria-label="Toggle menu">
@@ -26,6 +31,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#order">Order</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -36,14 +42,17 @@
     <section id="home" class="hero">
       <div class="hero-bg"></div>
       <div class="hero-content">
+        <p class="hero-value-prop">Pre-Order Artisan Sourdough Baked Fresh Weekly in NH</p>
         <p class="hero-subtitle">Artisan Sourdough • New England</p>
         <h1 class="hero-title">Our Daily Bread</h1>
-        <p class="hero-tagline">Bread baked with reverence.</p>
-        <p class="hero-mission">Naturally leavened. Crafted to feed the spirit as much as the body.</p>
+        <p class="hero-tagline">Not by bread alone.</p>
+        <p class="hero-subline"><em>Flour. Water. Salt. And grace.</em></p>
+        <p class="hero-mission">Naturally leavened. Crafted to feed the spirit as much as the body. New England artisan sourdough and fresh sourdough bread for pickup in Dover, NH.</p>
         <div class="hero-cta">
-          <a href="https://app.simply-bread.co/odbread" target="_blank" rel="noopener" class="btn btn-primary">Order Fresh Bread</a>
+          <a href="https://app.simply-bread.co/odbread" target="_blank" rel="noopener" class="btn btn-primary" id="orderCtaBtn">Order Fresh Bread</a>
           <a href="#about" class="btn btn-secondary">Our Story</a>
         </div>
+        <p class="hero-cta-hint">Choose bake day & pickup time</p>
       </div>
       <div class="hero-wheat" aria-hidden="true"></div>
     </section>
@@ -55,12 +64,12 @@
         <div class="about-grid">
           <div class="about-content">
             <p class="about-lead">Drawing from the timeless words &ldquo;Give us this day our daily bread,&rdquo; we create handcrafted sourdough that honors tradition, craftsmanship, and community.</p>
-            <p>Our Daily Bread is a Catholic-inspired artisan bakery that unites craftsmanship, faith, and community in every loaf. Our storefront will offer pickup orders, dine-in options, and communal events—from baking workshops to live music and educational talks.</p>
-            <p>We partner with <a href="https://www.simply-bread.co/" target="_blank" rel="noopener">Simply Bread</a> to bring you the finest naturally leavened bread, baked with care and delivered fresh.</p>
+            <p>Our Daily Bread is a Catholic-inspired artisan bakery in Dover, New Hampshire, offering <strong>New England artisan sourdough</strong> and <strong>fresh sourdough bread for pickup in NH</strong>. We unite craftsmanship, faith, and community in every loaf. Our storefront will offer pickup orders, dine-in options, and communal events—from baking workshops to live music and educational talks.</p>
+            <p>We partner with <a href="https://www.simply-bread.co/" target="_blank" rel="noopener">Simply Bread</a> to bring you the finest naturally leavened bread—<strong>artisan bakery preorder bread</strong> baked with care and delivered fresh for weekly pickup.</p>
             <div class="powered-by">
               <p class="powered-by-label">Powered by</p>
               <a href="https://www.simply-bread.co/" target="_blank" rel="noopener" class="simply-bread-logo-link">
-                <img src="images/simply-bread-logo.png" alt="Simply Bread" class="simply-bread-logo" width="120" height="48">
+                <img src="images/simply-bread-logo.png" alt="Simply Bread — pre-order platform for artisan bakery" class="simply-bread-logo" width="120" height="48" loading="lazy">
               </a>
             </div>
           </div>
@@ -87,13 +96,35 @@
           <div class="order-card">
             <div class="order-card-inner">
               <h3>Order via Simply Bread</h3>
-              <p>Browse our selection and order directly from our storefront. Pay with credit card, Apple Pay, or Google Pay.</p>
-              <a href="https://app.simply-bread.co/odbread" target="_blank" rel="noopener" class="btn btn-primary btn-large">
+              <p>Browse our selection and order directly from our storefront. Choose your bake day and pickup time. Pay with credit card, Apple Pay, or Google Pay.</p>
+              <a href="https://app.simply-bread.co/odbread" target="_blank" rel="noopener" class="btn btn-primary btn-large" id="orderStorefrontBtn">
                 Visit Our Storefront
               </a>
+              <p class="order-cta-hint">Choose bake day & pickup time</p>
               <p class="order-note">New to Simply Bread? Create an account at checkout to place your order.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof / Testimonials -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <h2 class="section-title">What People Say</h2>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial">
+            <p>&ldquo;The best artisan sourdough in the Seacoast. Every loaf is a gift.&rdquo;</p>
+            <cite>— Local customer, Dover NH</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>&ldquo;Pre-ordering is so easy—I pick up fresh bread every week. Can&rsquo;t imagine life without it.&rdquo;</p>
+            <cite>— Regular customer</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>&ldquo;Naturally leavened, handcrafted with care. This is what bread should taste like.&rdquo;</p>
+            <cite>— New England food lover</cite>
+          </blockquote>
         </div>
       </div>
     </section>
@@ -108,7 +139,8 @@
             <p>We&rsquo;d love to hear from you—whether you have questions about our bread, want to discuss wholesale partnerships, or are interested in our workshops and events.</p>
             <address>
               <p><strong>Our Daily Bread LLC</strong></p>
-              <p>Hampton, New Hampshire</p>
+              <p>Dover, New Hampshire</p>
+              <p><a href="https://www.google.com/maps/place/Our+Daily+Bread+LLC/@43.1908212,-70.8755246,611m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89e2978afdf554bd:0xdc9fb74efadb42b!8m2!3d43.1908173!4d-70.8729497!16s%2Fg%2F11yztmzsm4?entry=ttu" target="_blank" rel="noopener">Find us on Google Maps</a></p>
               <p><a href="tel:603-209-3032">603-209-3032</a></p>
               <p><a href="mailto:Peter.ODBread@gmail.com">Peter.ODBread@gmail.com</a></p>
             </address>
@@ -137,6 +169,37 @@
       <p class="footer-copy">&copy; Our Daily Bread LLC. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- LocalBusiness schema for Dover, NH -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Our Daily Bread",
+    "description": "Artisan sourdough bakery in Dover, NH. Pre-order naturally leavened bread for pickup.",
+    "url": "https://odbread.com",
+    "telephone": "+1-603-209-3032",
+    "email": "Peter.ODBread@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dover",
+      "addressRegion": "NH",
+      "addressCountry": "US"
+    },
+    "sameAs": "https://www.google.com/maps/place/Our+Daily+Bread+LLC/@43.1908212,-70.8755246,611m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89e2978afdf554bd:0xdc9fb74efadb42b!8m2!3d43.1908173!4d-70.8729497!16s%2Fg%2F11yztmzsm4?entry=ttu",
+    "areaServed": ["Dover NH", "New Hampshire", "New England"],
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Google Analytics: replace G-XXXXXXXXXX with your GA4 Measurement ID -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script> -->
 
   <script src="https://www.google.com/recaptcha/api.js?render=6LfA-WwsAAAAAMd-1ZGWtlz0RAtv8M4O-SusuF2E" async defer></script>
   <script src="js/main.js"></script>
