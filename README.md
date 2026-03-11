@@ -1,6 +1,6 @@
 # Our Daily Bread — Website
 
-Website for **Our Daily Bread LLC**, a Catholic-inspired artisan sourdough bakery in New England.
+Website for **Our Daily Bread LLC**, a Christian artisan sourdough bakery in New England.
 
 **Domain:** odbread.com
 
