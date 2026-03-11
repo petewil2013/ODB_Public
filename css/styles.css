@@ -515,26 +515,24 @@ a:hover {
   margin: 0;
 }
 
-/* Photos page gallery */
+/* Photos page gallery - 2 columns, images preserve aspect ratio */
 .photos-page .gallery-grid {
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
 }
 
-@media (min-width: 640px) {
-  .photos-page .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 900px) {
-  .photos-page .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 .photos-page .gallery-item {
-  aspect-ratio: 1;
+  aspect-ratio: unset;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.photos-page .gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: top;
 }
 
 .photos-page .gallery-grid .gallery-item {
@@ -686,6 +684,28 @@ address {
   font-style: italic;
   opacity: 0.6;
   margin: 0 0 1rem;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+}
+
+.footer-socials a:hover {
+  text-decoration: underline;
+}
+
+.footer-socials .social-placeholder {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.footer-socials .social-sep {
+  opacity: 0.5;
 }
 
 .footer-copy {
