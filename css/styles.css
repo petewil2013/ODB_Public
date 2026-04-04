@@ -345,7 +345,7 @@ main section[id] {
       rgba(249, 245, 236, 0.7) 0%,
       rgba(249, 245, 236, 0.6) 100%
     ),
-    url('/images/gallery/bread-sliced-batch.jpg');
+    url('../images/gallery/bread-sliced-batch.jpg');
   background-size: cover;
   background-position: center;
   z-index: 0;
