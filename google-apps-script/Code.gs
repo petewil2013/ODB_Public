@@ -1,5 +1,5 @@
 /**
- * Our Daily Bread — Contact Form Handler
+ * Panis Vivus — Contact Form Handler
  * 
  * SETUP: See G-Suite Setup Instructions doc
  * 
@@ -40,20 +40,20 @@ function doPost(e) {
     sheet.appendRow([new Date(), name, email, message]);
     
     // Send email
-    var emailBody = 'New contact form submission from Our Daily Bread website:\n\nName: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message;
-    GmailApp.sendEmail('Peter.ODBread@gmail.com', 'Our Daily Bread - New Contact: ' + name, emailBody, { replyTo: email });
+    var emailBody = 'New contact form submission from Panis Vivus website:\n\nName: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message;
+    GmailApp.sendEmail('support@odbread.com', 'Panis Vivus - New Contact: ' + name, emailBody, { replyTo: email });
     
     return createHtmlResponse('Thank You!', 'Your message has been sent. We\'ll be in touch soon.');
     
   } catch (err) {
     Logger.log(err.toString());
-    return createHtmlResponse('Error', 'Something went wrong. Please try again or email us at Peter.ODBread@gmail.com');
+    return createHtmlResponse('Error', 'Something went wrong. Please try again or email us at support@odbread.com');
   }
 }
 
 // Handle GET (e.g. someone visits the URL directly)
 function doGet(e) {
-  return createHtmlResponse('Our Daily Bread', 'This form handler is for the contact form. Visit odbread.com to get in touch.');
+  return createHtmlResponse('Panis Vivus', 'This form handler is for the contact form. Visit odbread.com to get in touch.');
 }
 
 function parseFormData(contents) {
@@ -92,6 +92,6 @@ function verifyRecaptcha(secret, token) {
 }
 
 function createHtmlResponse(title, message) {
-  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + title + '</title><style>body{font-family:Georgia,serif;background:#F9F5EC;color:#4A3B2E;margin:0;padding:2rem;min-height:100vh;display:flex;align-items:center;justify-content:center}.box{max-width:28rem;text-align:center}h1{font-size:1.5rem;margin-bottom:1rem}p{line-height:1.6;margin-bottom:1.5rem}a{color:#A7322B}</style></head><body><div class="box"><h1>' + title + '</h1><p>' + message + '</p><p><a href="https://odbread.com">Return to Our Daily Bread</a></p></div></body></html>';
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + title + '</title><style>body{font-family:Georgia,serif;background:#F9F5EC;color:#4A3B2E;margin:0;padding:2rem;min-height:100vh;display:flex;align-items:center;justify-content:center}.box{max-width:28rem;text-align:center}h1{font-size:1.5rem;margin-bottom:1rem}p{line-height:1.6;margin-bottom:1.5rem}a{color:#A7322B}</style></head><body><div class="box"><h1>' + title + '</h1><p>' + message + '</p><p><a href="https://odbread.com">Return to Panis Vivus</a></p></div></body></html>';
   return ContentService.createTextOutput(html).setMimeType(ContentService.MimeType.HTML);
 }

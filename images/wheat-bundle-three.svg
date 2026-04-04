@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 52" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="stemG" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5a6b35"/>
+      <stop offset="45%" stop-color="#7a9348"/>
+      <stop offset="100%" stop-color="#4d5c28"/>
+    </linearGradient>
+    <radialGradient id="grainG" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#f2e6a8"/>
+      <stop offset="35%" stop-color="#e8c86a"/>
+      <stop offset="70%" stop-color="#c9a03a"/>
+      <stop offset="100%" stop-color="#9a7220"/>
+    </radialGradient>
+    <radialGradient id="grainG2" cx="55%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f5ebd0"/>
+      <stop offset="40%" stop-color="#deb85c"/>
+      <stop offset="100%" stop-color="#a67c28"/>
+    </linearGradient>
+    <linearGradient id="ropeG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7d6a55"/>
+      <stop offset="50%" stop-color="#5c4a3a"/>
+      <stop offset="100%" stop-color="#3d3128"/>
+    </linearGradient>
+  </defs>
+  <!-- Stems (three stalks, slightly fanned) -->
+  <path d="M24 50 Q22 34 26 20 Q28 12 30 8" stroke="url(#stemG)" stroke-width="2.3" stroke-linecap="round"/>
+  <path d="M40 50 L40 6" stroke="url(#stemG)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M56 50 Q58 34 54 20 Q52 12 50 8" stroke="url(#stemG)" stroke-width="2.3" stroke-linecap="round"/>
+  <!-- Spikelets — left head -->
+  <g transform="translate(26 2) rotate(-6)">
+    <ellipse cx="4" cy="8" rx="5" ry="11" fill="url(#grainG)" opacity="0.96"/>
+    <ellipse cx="0" cy="10" rx="3.5" ry="7" fill="url(#grainG2)" opacity="0.88"/>
+    <ellipse cx="8" cy="9" rx="3.8" ry="8" fill="url(#grainG)" opacity="0.9"/>
+    <ellipse cx="4" cy="0" rx="3" ry="3.5" fill="#faf3d4" opacity="0.85"/>
+    <ellipse cx="2" cy="4" rx="2.2" ry="4.5" fill="#d4a84b" opacity="0.55"/>
+    <ellipse cx="6" cy="5" rx="2.2" ry="4.5" fill="#d4a84b" opacity="0.5"/>
+    <ellipse cx="4" cy="14" rx="2" ry="3.5" fill="#b8892e" opacity="0.65"/>
+  </g>
+  <!-- Center head (largest) -->
+  <g transform="translate(36 -4)">
+    <ellipse cx="4" cy="10" rx="6" ry="13" fill="url(#grainG)" opacity="0.98"/>
+    <ellipse cx="-1" cy="12" rx="4.5" ry="9" fill="url(#grainG2)" opacity="0.9"/>
+    <ellipse cx="10" cy="11" rx="4.8" ry="10" fill="url(#grainG)" opacity="0.92"/>
+    <ellipse cx="4" cy="1" rx="3.5" ry="4" fill="#faf3d4" opacity="0.9"/>
+    <ellipse cx="1" cy="6" rx="2.8" ry="5.5" fill="#c9953a" opacity="0.55"/>
+    <ellipse cx="8" cy="6" rx="2.8" ry="5.5" fill="#c9953a" opacity="0.52"/>
+    <ellipse cx="4" cy="18" rx="2.5" ry="4" fill="#a67c28" opacity="0.7"/>
+    <ellipse cx="-2" cy="14" rx="2" ry="4" fill="#b8892e" opacity="0.6"/>
+    <ellipse cx="11" cy="14" rx="2" ry="4" fill="#b8892e" opacity="0.58"/>
+  </g>
+  <!-- Right head -->
+  <g transform="translate(46 2) rotate(6)">
+    <ellipse cx="4" cy="8" rx="5" ry="11" fill="url(#grainG)" opacity="0.96"/>
+    <ellipse cx="0" cy="10" rx="3.5" ry="7" fill="url(#grainG2)" opacity="0.88"/>
+    <ellipse cx="8" cy="9" rx="3.8" ry="8" fill="url(#grainG)" opacity="0.9"/>
+    <ellipse cx="4" cy="0" rx="3" ry="3.5" fill="#faf3d4" opacity="0.85"/>
+    <ellipse cx="2" cy="4" rx="2.2" ry="4.5" fill="#d4a84b" opacity="0.55"/>
+    <ellipse cx="6" cy="5" rx="2.2" ry="4.5" fill="#d4a84b" opacity="0.5"/>
+    <ellipse cx="4" cy="14" rx="2" ry="3.5" fill="#b8892e" opacity="0.65"/>
+  </g>
+  <!-- Awns / fine bristles -->
+  <path d="M38 4 L36 0 M40 3 L40 -1 M42 4 L44 0" stroke="#c9a03a" stroke-width="0.6" stroke-linecap="round" opacity="0.7"/>
+  <path d="M28 6 L26 2 M30 5 L29 1" stroke="#c9a03a" stroke-width="0.5" stroke-linecap="round" opacity="0.65"/>
+  <path d="M50 6 L52 2 M48 5 L49 1" stroke="#c9a03a" stroke-width="0.5" stroke-linecap="round" opacity="0.65"/>
+  <!-- Bundle wrap (three stalks tied) -->
+  <ellipse cx="40" cy="33" rx="14" ry="4.2" fill="url(#ropeG)" opacity="0.95"/>
+  <path d="M28 32 Q40 29 52 32" stroke="#4a3b2e" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+  <path d="M27 34 Q40 37 53 34" stroke="#8b7355" stroke-width="0.9" stroke-linecap="round" opacity="0.5"/>
+</svg>

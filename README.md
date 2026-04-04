@@ -1,6 +1,6 @@
-# Our Daily Bread — Website
+# Panis Vivus — Website
 
-Website for **Our Daily Bread LLC**, a Christian artisan sourdough bakery in New England.
+Website for **Panis Vivus** (Our Daily Bread LLC), a Christian artisan sourdough bakery in New England.
 
 **Domain:** odbread.com
 
@@ -28,7 +28,7 @@ The contact form sends submissions to your Gmail and a Google Sheet. See **SETUP
 ### Contact Info
 Contact details are set to:
 - **Phone:** 603-209-3032
-- **Email:** Peter.ODBread@gmail.com
+- **Email:** support@odbread.com
 
 ### Simply Bread App Link
 When your bakery is live on Simply Bread, the Order section already links to the app. You may want to add a direct storefront URL if Simply Bread provides one for your bakery.
@@ -43,7 +43,8 @@ ODB/
 ├── css/styles.css      # Brand styles
 ├── js/main.js          # Nav toggle, form handling
 ├── images/
-│   └── wheat-emblem.svg  # Logo emblem
+│   ├── panis-vivus-logo.png  # Main logo
+│   └── wheat-emblem.svg
 ├── WEBSITE_PLAN.md     # Design & content plan
 └── README.md           # This file
 ```
