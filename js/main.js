@@ -22,6 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Mobile nav toggle
   if (navToggle && navLinks) {
+    var desktopNavMq = window.matchMedia('(min-width: 641px)');
+
+    function closeMobileNav() {
+      navLinks.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+
     navToggle.addEventListener('click', function () {
       navLinks.classList.toggle('is-open');
       navToggle.setAttribute('aria-expanded', navLinks.classList.contains('is-open'));
@@ -30,9 +37,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // Close menu when clicking a link
     navLinks.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        navLinks.classList.remove('is-open');
+        closeMobileNav();
       });
     });
+
+    function onNavBreakpointChange() {
+      if (desktopNavMq.matches) {
+        closeMobileNav();
+      }
+    }
+
+    if (typeof desktopNavMq.addEventListener === 'function') {
+      desktopNavMq.addEventListener('change', onNavBreakpointChange);
+    } else if (typeof desktopNavMq.addListener === 'function') {
+      desktopNavMq.addListener(onNavBreakpointChange);
+    }
   }
 
   // Contact form — validate reCAPTCHA before submitting to Google Apps Script
