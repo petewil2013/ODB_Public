@@ -13,19 +13,19 @@
   --brown-light: #6B5B4A;
   --font-serif: 'EB Garamond', Georgia, serif;
   --font-sans: 'Libre Franklin', system-ui, sans-serif;
-  /* Fixed presale strip + nav — taller when banner stacks (narrow viewports) */
-  --site-header-offset: 15rem;
+  /* Clears fixed header; exact value set in JS (ResizeObserver). Fallback if JS is off. */
+  --site-header-offset: 10rem;
 }
 
-@media (min-width: 521px) {
+@media (min-width: 641px) {
   :root {
-    --site-header-offset: 13.5rem;
+    --site-header-offset: 9rem;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 901px) {
   :root {
-    --site-header-offset: 12.5rem;
+    --site-header-offset: 8.5rem;
   }
 }
 
@@ -143,34 +143,41 @@ a:hover {
 
 .presale-banner-inner {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  column-gap: 0.65rem;
+  row-gap: 0.35rem;
   max-width: 64rem;
   margin: 0 auto;
-  padding: 0.65rem 1.25rem 0.75rem;
+  padding: 0.4rem 0.75rem;
 }
 
 @media (min-width: 521px) {
   .presale-banner-inner {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.25rem;
+    column-gap: 1.25rem;
+    row-gap: 0.75rem;
     padding: 0.55rem 1.5rem;
   }
 }
 
 .presale-banner-emblem {
-  display: flex;
+  display: none;
   flex-shrink: 0;
   align-items: center;
 }
 
+@media (min-width: 520px) {
+  .presale-banner-emblem {
+    display: flex;
+  }
+}
+
 .presale-banner-emblem img.presale-banner-loaf {
   display: block;
-  width: 72px;
-  height: 44px;
+  width: 56px;
+  height: 34px;
   object-fit: cover;
   object-position: center;
   border-radius: 3px;
@@ -179,15 +186,20 @@ a:hover {
 
 .presale-banner-text {
   margin: 0;
-  flex: 1 1 16rem;
+  flex: 1 1 min(100%, 15rem);
   min-width: 0;
-  font-size: 0.875rem;
-  line-height: 1.45;
+  font-size: 0.8125rem;
+  line-height: 1.35;
   color: var(--brick-red);
   text-align: center;
 }
 
 @media (min-width: 521px) {
+  .presale-banner-emblem img.presale-banner-loaf {
+    width: 72px;
+    height: 44px;
+  }
+
   .presale-banner-text {
     font-size: 0.9375rem;
   }
@@ -208,11 +220,16 @@ a:hover {
 }
 
 .presale-banner-sub {
-  display: block;
-  margin-top: 0.2rem;
+  display: inline;
   font-weight: 400;
   color: var(--brick-red);
   opacity: 0.92;
+}
+
+@media (max-width: 520px) {
+  .presale-banner-sub::before {
+    content: '\00a0·\00a0';
+  }
 }
 
 @media (min-width: 521px) {
@@ -228,8 +245,8 @@ a:hover {
 
 .btn-presale {
   flex-shrink: 0;
-  padding: 0.45rem 1.1rem;
-  font-size: 0.8125rem;
+  padding: 0.38rem 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -245,20 +262,35 @@ a:hover {
   border-color: #8a2924;
 }
 
+@media (min-width: 521px) {
+  .btn-presale {
+    padding: 0.45rem 1.1rem;
+    font-size: 0.8125rem;
+  }
+}
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 64rem;
   margin: 0 auto;
-  padding: 1rem 1rem;
-  gap: 1rem;
+  padding: 0.5rem 0.75rem;
+  gap: 0.5rem;
   position: relative;
 }
 
 @media (min-width: 480px) {
   .nav {
+    padding: 0.65rem 1rem;
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .nav {
     padding: 1rem 1.5rem;
+    gap: 1rem;
   }
 }
 
@@ -286,12 +318,19 @@ a:hover {
 }
 
 .logo-img {
-  height: 52px;
+  height: 44px;
   width: auto;
-  max-width: 104px;
+  max-width: 88px;
   object-fit: contain;
   object-position: left center;
   vertical-align: middle;
+}
+
+@media (min-width: 641px) {
+  .logo-img {
+    height: 52px;
+    max-width: 104px;
+  }
 }
 
 .logo:hover {
@@ -384,18 +423,25 @@ main section[id] {
 /* Hero: offset clears fixed header; flex-start avoids squashing centered block on short viewports */
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 72vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  padding: calc(var(--site-header-offset) + 1.25rem) 1rem 3rem;
+  padding: calc(var(--site-header-offset) + 0.5rem) 1rem 3rem;
   overflow: hidden;
 }
 
 @media (min-width: 480px) {
   .hero {
+    padding: calc(var(--site-header-offset) + 0.75rem) 1.5rem 4rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .hero {
+    min-height: 85vh;
     padding: calc(var(--site-header-offset) + 1.25rem) 1.5rem 4rem;
   }
 }
@@ -814,7 +860,13 @@ main section[id] {
 }
 
 .photos-page .photos-hero-spacing {
-  padding-top: var(--site-header-offset);
+  padding-top: calc(var(--site-header-offset) + 0.5rem);
+}
+
+@media (min-width: 641px) {
+  .photos-page .photos-hero-spacing {
+    padding-top: calc(var(--site-header-offset) + 1rem);
+  }
 }
 
 

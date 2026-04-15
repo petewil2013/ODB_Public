@@ -4,6 +4,27 @@
  */
 
 document.addEventListener('DOMContentLoaded', function () {
+  var siteHeader = document.querySelector('.site-header');
+
+  function syncSiteHeaderOffset() {
+    if (!siteHeader) return;
+    var h = siteHeader.offsetHeight;
+    document.documentElement.style.setProperty('--site-header-offset', h + 8 + 'px');
+  }
+
+  if (siteHeader) {
+    syncSiteHeaderOffset();
+    requestAnimationFrame(function () {
+      requestAnimationFrame(syncSiteHeaderOffset);
+    });
+    if (typeof ResizeObserver !== 'undefined') {
+      new ResizeObserver(syncSiteHeaderOffset).observe(siteHeader);
+    } else {
+      window.addEventListener('resize', syncSiteHeaderOffset);
+    }
+    window.addEventListener('load', syncSiteHeaderOffset);
+  }
+
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
 
