@@ -17,6 +17,33 @@
  * 6. Copy the /exec URL into index.html
  */
 
+var MAX_NAME_LEN = 200;
+var MAX_EMAIL_LEN = 254;
+var MAX_MESSAGE_LEN = 8000;
+
+function escapeHtml(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function sanitizeOneLine(s) {
+  return String(s || '').replace(/[\r\n\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, ' ').trim();
+}
+
+function isValidEmail(email) {
+  if (!email || email.length > MAX_EMAIL_LEN) return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function jsonResponse(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
 function doPost(e) {
   try {
     var params = e.parameter || {};
@@ -31,33 +58,50 @@ function doPost(e) {
     
     var secret = PropertiesService.getScriptProperties().getProperty('RECAPTCHA_SECRET');
     if (!secret) {
-      return createHtmlResponse('Configuration Error', 'Add RECAPTCHA_SECRET in Script Properties.');
+      return jsonResponse({ ok: false, title: 'Configuration Error', message: 'Add RECAPTCHA_SECRET in Script Properties.' });
     }
     
     if (!verifyRecaptcha(secret, recaptchaToken)) {
-      return createHtmlResponse('Verification Failed', 'Please complete the reCAPTCHA and try again.');
+      return jsonResponse({ ok: false, title: 'Verification Failed', message: 'Please complete the reCAPTCHA and try again.' });
     }
     
     if (!name || !email || !message) {
-      return createHtmlResponse('Missing Fields', 'Please fill in all required fields.');
+      return jsonResponse({ ok: false, title: 'Missing Fields', message: 'Please fill in all required fields.' });
+    }
+
+    if (!isValidEmail(email)) {
+      return jsonResponse({ ok: false, title: 'Invalid Email', message: 'Please enter a valid email address.' });
+    }
+
+    if (name.length > MAX_NAME_LEN || email.length > MAX_EMAIL_LEN || message.length > MAX_MESSAGE_LEN) {
+      return jsonResponse({ ok: false, title: 'Input Too Long', message: 'Please shorten your message and try again.' });
     }
     
     var sheetId = PropertiesService.getScriptProperties().getProperty('SPREADSHEET_ID');
     if (!sheetId) {
-      return createHtmlResponse('Configuration Error', 'Add SPREADSHEET_ID in Script Properties.');
+      return jsonResponse({ ok: false, title: 'Configuration Error', message: 'Add SPREADSHEET_ID in Script Properties.' });
     }
     
     var sheet = SpreadsheetApp.openById(sheetId).getSheets()[0];  // First tab
     sheet.appendRow([new Date(), name, email, message]);
     
+    var safeName = sanitizeOneLine(name);
     var emailBody = 'New contact form submission from Panis Vivus website:\n\nName: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message;
-    GmailApp.sendEmail('support@odbread.com', 'Panis Vivus - New Contact: ' + name, emailBody, { replyTo: email });
+    var mailOpts = {};
+    if (isValidEmail(email)) {
+      mailOpts.replyTo = email;
+    }
+    GmailApp.sendEmail('support@odbread.com', 'Panis Vivus - New Contact: ' + safeName, emailBody, mailOpts);
     
-    return createHtmlResponse('Thank You!', 'Your message has been sent. We\'ll be in touch soon.');
+    return jsonResponse({
+      ok: true,
+      title: 'Thank you for reaching out',
+      message: 'Your message has been submitted. We\'ll be in touch soon. In the meantime, we hope you enjoy our sourdough!'
+    });
     
   } catch (err) {
     Logger.log(err.toString());
-    return createHtmlResponse('Error', 'Something went wrong. Please try again or email us at support@odbread.com');
+    return jsonResponse({ ok: false, title: 'Error', message: 'Something went wrong. Please try again or email us at support@odbread.com' });
   }
 }
 
@@ -92,8 +136,7 @@ function verifyRecaptcha(secret, token) {
     });
     var result = JSON.parse(response.getContentText());
     if (!result.success) return false;
-    // v3: score 0.0-1.0. Use 0.3 for localhost/testing; 0.5 is typical for production
-    if (result.score !== undefined && result.score < 0.3) return false;
+    if (result.score !== undefined && result.score < 0.5) return false;
     return true;
   } catch (e) {
     return false;
@@ -101,6 +144,8 @@ function verifyRecaptcha(secret, token) {
 }
 
 function createHtmlResponse(title, message) {
-  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + title + '</title><style>body{font-family:Georgia,serif;background:#F9F5EC;color:#4A3B2E;margin:0;padding:2rem;min-height:100vh;display:flex;align-items:center;justify-content:center}.box{max-width:28rem;text-align:center}h1{font-size:1.5rem;margin-bottom:1rem}p{line-height:1.6;margin-bottom:1.5rem}a{color:#A7322B}</style></head><body><div class="box"><h1>' + title + '</h1><p>' + message + '</p><p><a href="https://odbread.com">Return to Panis Vivus</a></p></div></body></html>';
+  var t = escapeHtml(title);
+  var m = escapeHtml(message);
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + t + '</title><style>body{font-family:Georgia,serif;background:#F9F5EC;color:#4A3B2E;margin:0;padding:2rem;min-height:100vh;display:flex;align-items:center;justify-content:center}.box{max-width:28rem;text-align:center}h1{font-size:1.5rem;margin-bottom:1rem}p{line-height:1.6;margin-bottom:1.5rem}a{color:#A7322B}</style></head><body><div class="box"><h1>' + t + '</h1><p>' + m + '</p><p><a href="https://odbread.com">Return to Panis Vivus</a></p></div></body></html>';
   return ContentService.createTextOutput(html).setMimeType(ContentService.MimeType.HTML);
 }
