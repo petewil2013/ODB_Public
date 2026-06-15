@@ -117,13 +117,12 @@
   const navLinks = document.querySelector('.nav-links');
 
   // Analytics: track Order CTA clicks (works with GA4 when uncommented)
-  ['orderCtaBtn', 'orderStorefrontBtn', 'presaleWaitlistBtn'].forEach(function (id) {
+  ['orderCtaBtn', 'orderStorefrontBtn'].forEach(function (id) {
     var btn = document.getElementById(id);
     if (btn) {
       btn.addEventListener('click', function () {
         if (typeof gtag === 'function') {
-          var eventName = id === 'presaleWaitlistBtn' ? 'click_presale_waitlist' : 'click_order_cta';
-          gtag('event', eventName, { event_category: 'conversion', event_label: id });
+          gtag('event', 'click_order_cta', { event_category: 'conversion', event_label: id });
         }
       });
     }
