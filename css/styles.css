@@ -1084,3 +1084,121 @@ address {
 .site-footer a {
   color: var(--warm-sepia);
 }
+
+/* ============================================
+   Shop page (shop.html) — Stay Leavened merch
+   ============================================ */
+.shop-hero {
+  padding: calc(var(--site-header-offset) + 1.25rem) 0 2.5rem;
+  background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .shop-hero {
+    padding: calc(var(--site-header-offset) + 2rem) 0 3.5rem;
+  }
+}
+
+.shop-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm-sepia);
+  margin: 0 0 0.5rem;
+}
+
+.shop-title {
+  margin: 0 0 0.5rem;
+}
+
+.shop-latin {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  color: var(--brick-red);
+  margin: 0 0 1.25rem;
+}
+
+.shop-lead {
+  max-width: 40rem;
+  margin: 0 auto;
+  color: var(--brown-light);
+}
+
+.shop-collections {
+  padding: 3rem 0;
+}
+
+@media (min-width: 768px) {
+  .shop-collections {
+    padding: 4rem 0;
+  }
+}
+
+.shop-collections-intro {
+  text-align: center;
+  color: var(--brown-light);
+  margin: 0 auto 2rem;
+  max-width: 36rem;
+}
+
+.collection-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .collection-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.collection-card {
+  background: var(--cream-dark);
+  border: 1px solid rgba(74, 59, 46, 0.1);
+  border-top: 3px solid var(--warm-sepia);
+  border-radius: 4px;
+  padding: 1.5rem 1.25rem;
+}
+
+.collection-card h3 {
+  font-size: 1.125rem;
+  margin: 0 0 0.5rem;
+  color: var(--iron-brown);
+}
+
+.collection-card p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--brown-light);
+}
+
+.shop-cta {
+  margin: 1.75rem 0 0;
+  text-align: center;
+}
+
+.shop-collections .shop-cta {
+  margin-top: 2.25rem;
+}
+
+.shop-cta-hint {
+  margin: 0.75rem auto 0;
+  max-width: 40rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--brown-light);
+  opacity: 0.85;
+}

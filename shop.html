@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
+  <!-- Strict CSP (same baseline as the rest of the site). The shop itself is a hosted Shopify
+       store reached via a normal link, so no third-party embed hosts are needed here. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests; frame-src https://www.google.com; script-src 'self' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net; form-action 'self' https://script.google.com;">
+  <title>Shop | Panis Vivus – Our Daily Bread</title>
+  <meta name="description" content="The Panis Vivus shop — faith-shaped apparel and kitchen goods from Our Daily Bread in Dover, NH. Featuring the Stay Leavened collection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=4">
+</head>
+<body>
+  <header class="site-header">
+    <div class="presale-banner" id="presale" role="region" aria-label="Pre-sale announcement">
+      <div class="presale-banner-inner">
+        <span class="presale-banner-emblem" aria-hidden="true">
+          <img src="images/presale-banner-loaf.png" alt="" width="96" height="64" decoding="async" class="presale-banner-loaf">
+        </span>
+        <p class="presale-banner-text">
+          <strong class="presale-banner-headline">Pre-sale opening soon</strong>
+          <span class="presale-banner-sep" aria-hidden="true">·</span>
+          <span class="presale-banner-sub">Dover, NH — join the waitlist and be first when bake days open.</span>
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScYV_arNVlTbELzNKNowusq5v8v34njlPWkeM5e5XoWKt8foQ/viewform" class="btn btn-presale" id="presaleWaitlistBtn" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="images/panis-vivus-logo.png" alt="Panis Vivus — artisan sourdough bakery, Dover NH" class="logo-img" width="96" height="96">
+        <span class="logo-wordmark">Panis Vivus</span>
+      </a>
+      <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#order">Order</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="shop.html" aria-current="page">Shop</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="shop-page">
+    <section class="shop-hero">
+      <div class="container">
+        <p class="shop-eyebrow">The Panis Vivus Shop</p>
+        <h1 class="section-title shop-title">Wear the leaven. Stock the kitchen.</h1>
+        <p class="shop-latin"><em>Non solo pane</em> — not by bread alone.</p>
+        <p class="shop-lead">
+          Faith-shaped apparel and kitchen goods from Our Daily Bread, made to the same standard as our loaves.
+          Our apparel lives under the <strong>Stay Leavened</strong> collection; alongside it you'll find hoodies,
+          aprons, and kitchen goods like our branded beeswax bread bag. Most apparel is printed to order, so we
+          keep waste low and your gear shows up fresh.
+        </p>
+        <!--
+          STORE LINK: replace the href below with your real Shopify store URL.
+          Use your custom subdomain once connected (https://shop.odbread.com) or your
+          Shopify address in the meantime (https://your-store.myshopify.com).
+        -->
+        <p class="shop-cta">
+          <a class="btn btn-primary btn-large" href="https://9jcm4d-rh.myshopify.com" id="shopStoreBtn" rel="noopener">Visit the shop</a>
+        </p>
+        <p class="shop-cta-hint">Secure checkout and shipping are handled by our Shopify store.</p>
+      </div>
+    </section>
+
+    <section class="shop-collections" aria-labelledby="collections-heading">
+      <div class="container">
+        <h2 id="collections-heading" class="section-title">Collections</h2>
+        <p class="shop-collections-intro">A growing line. New designs and products are added regularly.</p>
+        <ul class="collection-grid">
+          <li class="collection-card">
+            <h3>Stay Leavened</h3>
+            <p>Our signature apparel line — tees and more with a sourdough-and-faith point of view. Printed to order.</p>
+          </li>
+          <li class="collection-card">
+            <h3>Hoodies</h3>
+            <p>Heavyweight comfort for cold proofs and early bake mornings. Printed to order in multiple colors.</p>
+          </li>
+          <li class="collection-card">
+            <h3>Aprons</h3>
+            <p>Embroidered and printed aprons for home bakers — the same gear our kitchen wears.</p>
+          </li>
+          <li class="collection-card">
+            <h3>Kitchen Goods</h3>
+            <p>Including our branded beeswax bread bag — keep a fresh loaf fresher, the reusable way.</p>
+          </li>
+        </ul>
+        <p class="shop-cta">
+          <a class="btn btn-secondary" href="https://9jcm4d-rh.myshopify.com" rel="noopener">Browse the full catalog</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-brand">Panis Vivus</p>
+      <p class="footer-tagline">Bread baked with faith—shared with everyone.</p>
+      <p class="footer-latin"><em>Panem nostrum quotidianum da nobis hodie</em></p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/odbread26/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">Instagram</a>
+        <span class="social-sep">·</span>
+        <span class="footer-socials-placeholder" title="Coming soon">Facebook <span class="visually-hidden">(coming soon)</span></span>
+      </div>
+      <p class="footer-copy">&copy; Our Daily Bread LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D5C2E35JSS"></script>
+  <script src="js/gtag-init.js?v=4" defer></script>
+  <script src="js/main.js?v=5" defer></script>
+</body>
+</html>
