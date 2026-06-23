@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="stylesheet" href="css/styles.css?v=6">
   <link rel="canonical" href="https://odbread.com/">
   <meta property="og:title" content="Artisan Sourdough Bakery | Panis Vivus – New England">
   <meta property="og:description" content="Naturally leavened sourdough in Dover, NH — faith-shaped craft, open table. Order online for weekly pickup.">
@@ -35,6 +35,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#order">Order</a></li>
+        <li><a href="#visit">Visit</a></li>
         <li><a href="photos.html">Photos</a></li>
         <li><a href="shop.html">Apparel</a></li>
         <li><a href="#testimonials">Reviews</a></li>
@@ -140,6 +141,66 @@
       </div>
     </section>
 
+    <!-- Menu, Hours & Location -->
+    <section id="visit" class="visit">
+      <div class="container visit-container">
+        <h2 class="section-title">Visit Us</h2>
+        <p class="visit-lead"><strong>All items either on or made with sourdough!</strong></p>
+        <div class="visit-grid">
+          <div class="visit-card visit-menu">
+            <h3>Menu</h3>
+            <div class="menu-category">
+              <h4>Bread Loaves</h4>
+              <ul class="menu-list">
+                <li>Country Loaf (50/50 whole wheat)</li>
+                <li>Jalape&ntilde;o Cheddar</li>
+                <li>Dried Blueberries and Poppy Seeds</li>
+                <li>Saut&eacute;ed Garlic &amp; Onion</li>
+              </ul>
+            </div>
+            <div class="menu-category">
+              <h4>Breakfast</h4>
+              <ul class="menu-list">
+                <li>Avocado Toast</li>
+                <li>Toast &amp; Cream Cheese</li>
+                <li>Toast &amp; Peanut Butter</li>
+                <li>Breakfast Sandwich &mdash; Sausage or Bacon, egg, and cheese (American, Cheddar, or Pepper Jack)</li>
+              </ul>
+            </div>
+            <div class="menu-category">
+              <h4>Lunch</h4>
+              <ul class="menu-list">
+                <li>Reuben</li>
+                <li>Ham and Swiss</li>
+                <li>Ham or Veggie Club</li>
+                <li>Broccoli Cheddar Soup Bread Bowl</li>
+                <li>Chocolate Cheddar</li>
+              </ul>
+              <p class="menu-note">All sandwiches served with Cape Cod Chips.</p>
+            </div>
+          </div>
+          <div class="visit-card visit-hours">
+            <h3>Hours</h3>
+            <p class="visit-emphasis">Starting June 29</p>
+            <ul class="hours-list">
+              <li><span class="hours-day">Monday</span><span class="hours-time">7&thinsp;am&ndash;2&thinsp;pm</span></li>
+              <li><span class="hours-day">Wednesday</span><span class="hours-time">7&thinsp;am&ndash;2&thinsp;pm</span></li>
+              <li><span class="hours-day">Friday</span><span class="hours-time">7&thinsp;am&ndash;2&thinsp;pm</span></li>
+              <li><span class="hours-day">Saturday</span><span class="hours-time">9&thinsp;am&ndash;2&thinsp;pm</span></li>
+            </ul>
+          </div>
+          <div class="visit-card visit-location">
+            <h3>Location</h3>
+            <address class="visit-address">
+              <p>61 Locust Street, Room 131<br>Dover, NH</p>
+            </address>
+            <p class="visit-emphasis">Please enter off of St. Thomas Street through Door&nbsp;#7.</p>
+            <p><a href="https://www.google.com/maps/place/Our+Daily+Bread+LLC/@43.1908212,-70.8755246,611m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89e2978afdf554bd:0xdc9fb74efadb42b!8m2!3d43.1908173!4d-70.8729497!16s%2Fg%2F11yztmzsm4?entry=ttu" target="_blank" rel="noopener noreferrer">Get directions on Google Maps</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Social Proof / Testimonials -->
     <section id="testimonials" class="testimonials">
       <div class="container">
@@ -171,7 +232,8 @@
             <p>We&rsquo;d love to hear from you—whether you have questions about our bread, want to discuss wholesale partnerships, or are interested in our workshops and events.</p>
             <address>
               <p><strong>Our Daily Bread LLC</strong></p>
-              <p>Dover, New Hampshire</p>
+              <p>61 Locust Street, Room 131<br>Dover, New Hampshire</p>
+              <p class="contact-directions">Enter off St. Thomas Street through Door&nbsp;#7.</p>
               <p><a href="https://www.google.com/maps/place/Our+Daily+Bread+LLC/@43.1908212,-70.8755246,611m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89e2978afdf554bd:0xdc9fb74efadb42b!8m2!3d43.1908173!4d-70.8729497!16s%2Fg%2F11yztmzsm4?entry=ttu" target="_blank" rel="noopener noreferrer">Find us on Google Maps</a></p>
               <p><a href="tel:603-209-3032">603-209-3032</a></p>
               <p><a href="mailto:support@odbread.com">support@odbread.com</a></p>
@@ -221,10 +283,25 @@
     "email": "support@odbread.com",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "61 Locust Street, Room 131",
       "addressLocality": "Dover",
       "addressRegion": "NH",
       "addressCountry": "US"
     },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Wednesday", "Friday"],
+        "opens": "07:00",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "14:00"
+      }
+    ],
     "sameAs": [
       "https://www.instagram.com/odbread26/",
       "https://www.google.com/maps/place/Our+Daily+Bread+LLC/@43.1908212,-70.8755246,611m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89e2978afdf554bd:0xdc9fb74efadb42b!8m2!3d43.1908173!4d-70.8729497!16s%2Fg%2F11yztmzsm4?entry=ttu"
