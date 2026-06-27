@@ -1,10 +1,24 @@
 /**
- * Panis Vivus — Main JavaScript
- * Handles navigation toggle and smooth scroll
+ * Our Daily Bread — Main JavaScript
+ * Handles navigation toggle, donation total, and smooth scroll
  */
 
 (function () {
   'use strict';
+
+  var donationTotalEl = document.getElementById('donationTotal');
+  if (donationTotalEl) {
+    fetch('data/donations-public.json')
+      .then(function (response) {
+        return response.ok ? response.json() : null;
+      })
+      .then(function (data) {
+        if (data && typeof data.totalLoaves === 'number') {
+          donationTotalEl.textContent = data.totalLoaves.toLocaleString();
+        }
+      })
+      .catch(function () {});
+  }
 
   var APPS_SCRIPT_ORIGIN = 'https://script.google.com';
 

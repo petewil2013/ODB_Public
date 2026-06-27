@@ -662,6 +662,18 @@ main section[id] {
   color: var(--iron-brown);
 }
 
+.donation-stat {
+  font-size: 1.0625rem;
+  margin: 0 0 1rem;
+}
+
+.donation-total {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--brick-red);
+}
+
 .powered-by {
   margin: 1.5rem 0 0;
 }
@@ -1052,6 +1064,11 @@ main section[id] {
 @media (min-width: 768px) {
   .testimonials-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonials-grid--two {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 42rem;
   }
 }
 

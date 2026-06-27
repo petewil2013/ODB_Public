@@ -24,3 +24,6 @@ venv/
 dist/
 build/
 *.log
+
+# Internal donation log (entity names for taxes — not published on the site)
+records/
