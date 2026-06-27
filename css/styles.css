@@ -322,7 +322,7 @@ a:hover {
 .logo-img {
   height: 44px;
   width: auto;
-  max-width: 88px;
+  max-width: 160px;
   object-fit: contain;
   object-position: left center;
   vertical-align: middle;
@@ -330,8 +330,8 @@ a:hover {
 
 @media (min-width: 641px) {
   .logo-img {
-    height: 52px;
-    max-width: 104px;
+    height: 56px;
+    max-width: 200px;
   }
 }
 
@@ -508,9 +508,9 @@ main section[id] {
 
 .hero-title--logo .hero-logo {
   display: block;
-  width: min(100%, 300px);
+  width: min(100%, 420px);
   height: auto;
-  max-height: clamp(150px, 32vw, 260px);
+  max-height: clamp(100px, 24vw, 200px);
   margin: 0 auto;
   object-fit: contain;
 }
@@ -654,6 +654,12 @@ main section[id] {
 
 .about-content p {
   margin: 0 0 1rem;
+}
+
+.about-subhead {
+  font-size: 1.125rem;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--iron-brown);
 }
 
 .powered-by {
