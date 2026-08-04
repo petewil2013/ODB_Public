@@ -142,6 +142,58 @@
     }
   });
 
+  // Visit menu tabs (In-Store / Take-Out / Catering)
+  (function initMenuTabs() {
+    var tablist = document.querySelector('.menu-tabs');
+    if (!tablist) return;
+
+    var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+    var panels = tabs.map(function (tab) {
+      return document.getElementById(tab.getAttribute('aria-controls'));
+    }).filter(Boolean);
+
+    function activateTab(nextTab, focusTab) {
+      tabs.forEach(function (tab, i) {
+        var selected = tab === nextTab;
+        tab.classList.toggle('is-active', selected);
+        tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+        tab.tabIndex = selected ? 0 : -1;
+        if (panels[i]) {
+          panels[i].classList.toggle('is-active', selected);
+          if (selected) {
+            panels[i].removeAttribute('hidden');
+          } else {
+            panels[i].setAttribute('hidden', '');
+          }
+        }
+      });
+      if (focusTab) nextTab.focus();
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        activateTab(tab, false);
+      });
+
+      tab.addEventListener('keydown', function (e) {
+        var idx = tabs.indexOf(tab);
+        var nextIdx = -1;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          nextIdx = (idx + 1) % tabs.length;
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          nextIdx = (idx - 1 + tabs.length) % tabs.length;
+        } else if (e.key === 'Home') {
+          nextIdx = 0;
+        } else if (e.key === 'End') {
+          nextIdx = tabs.length - 1;
+        }
+        if (nextIdx === -1) return;
+        e.preventDefault();
+        activateTab(tabs[nextIdx], true);
+      });
+    });
+  })();
+
   // Mobile nav toggle
   if (navToggle && navLinks) {
     var desktopNavMq = window.matchMedia('(min-width: 641px)');

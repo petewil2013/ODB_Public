@@ -149,39 +149,314 @@
     <section id="visit" class="visit">
       <div class="container visit-container">
         <h2 class="section-title">Visit Us</h2>
-        <p class="visit-lead"><strong>All items either on or made with sourdough!</strong></p>
+        <p class="visit-lead"><strong>All items are made with &mdash; or served on &mdash; our naturally leavened sourdough.</strong></p>
         <div class="visit-grid">
           <div class="visit-card visit-menu">
             <h3>Menu</h3>
-            <div class="menu-category">
-              <h4>Bread Loaves</h4>
-              <ul class="menu-list">
-                <li>Country Loaf (50/50 whole wheat)</li>
-                <li>Jalape&ntilde;o Cheddar</li>
-                <li>Dried Blueberries and Poppy Seeds</li>
-                <li>Saut&eacute;ed Garlic &amp; Onion</li>
-              </ul>
+            <div class="menu-tabs" role="tablist" aria-label="Choose a menu">
+              <button type="button" class="menu-tab is-active" role="tab" id="tab-instore" aria-selected="true" aria-controls="menu-instore">In-Store</button>
+              <button type="button" class="menu-tab" role="tab" id="tab-takeout" aria-selected="false" aria-controls="menu-takeout" tabindex="-1">Take-Out</button>
+              <button type="button" class="menu-tab" role="tab" id="tab-catering" aria-selected="false" aria-controls="menu-catering" tabindex="-1">Catering</button>
             </div>
-            <div class="menu-category">
-              <h4>Breakfast</h4>
-              <ul class="menu-list">
-                <li>Avocado Toast</li>
-                <li>Toast &amp; Cream Cheese</li>
-                <li>Toast &amp; Peanut Butter</li>
-                <li>Breakfast Sandwich &mdash; Sausage or Bacon, egg, and cheese (American, Cheddar, or Pepper Jack)</li>
-                <li>Coffee</li>
-              </ul>
+
+            <!-- In-Store -->
+            <div class="menu-panel is-active" role="tabpanel" id="menu-instore" aria-labelledby="tab-instore">
+              <div class="menu-category">
+                <h4>Bread Loaves</h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Country Loaf</span><span class="menu-item-price">$12.00</span></span>
+                    <span class="menu-item-desc">50/50 bread &amp; whole wheat &middot; ~1000 g</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Jalape&ntilde;o Cheddar</span><span class="menu-item-price">$14.00</span></span>
+                    <span class="menu-item-desc">Country dough &middot; cheddar &middot; jalape&ntilde;os</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Dried Blueberries &amp; Poppy Seeds</span><span class="menu-item-price">$15.00</span></span>
+                    <span class="menu-item-desc">Country dough &middot; dried blueberries &middot; poppy seeds</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Saut&eacute;ed Garlic &amp; Onion</span><span class="menu-item-price">$14.00</span></span>
+                    <span class="menu-item-desc">Country dough &middot; Spanish onion &middot; garlic</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-category">
+                <h4>Breakfast</h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Avocado Toast</span><span class="menu-item-price">$10.00</span></span>
+                    <span class="menu-item-desc">Two slices toast &middot; 3 oz chunky avocado</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Toast &amp; Cream Cheese</span><span class="menu-item-price">$5.50</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Toast &amp; Peanut Butter</span><span class="menu-item-price">$4.50</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Breakfast Sandwich</span><span class="menu-item-price">$11.00</span></span>
+                    <span class="menu-item-desc">Eggs, cheese (American, cheddar, or pepper jack), bacon or sausage</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Cinnamon Roll</span><span class="menu-item-price">$5.50</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Cinnamon Rolls (Half Dozen)</span><span class="menu-item-price">$30.00</span></span>
+                    <span class="menu-item-desc">Six iced rolls &middot; no tax</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-category">
+                <h4>Lunch</h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Reuben</span><span class="menu-item-price">$14.00</span></span>
+                    <span class="menu-item-desc">Corned beef &middot; Swiss &middot; sauerkraut &middot; Thousand Island</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Ham &amp; Swiss</span><span class="menu-item-price">$11.00</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Ham, Turkey, or Veggie Club</span><span class="menu-item-price">$12.00</span></span>
+                    <span class="menu-item-desc">Lettuce, tomato, pickle, onion, mayo &middot; veggie $10</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Broccoli Cheddar Soup</span><span class="menu-item-price">$12.00</span></span>
+                    <span class="menu-item-desc">Served in a hollowed sourdough bowl</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Chocolate Chip Cookies</span><span class="menu-item-price">$3.00</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Cookies by the Dozen</span><span class="menu-item-price">$28.00</span></span>
+                    <span class="menu-item-desc">Made to order &middot; no tax</span>
+                  </li>
+                </ul>
+                <p class="menu-note">All sandwiches served with Cape Cod chips.</p>
+              </div>
+              <div class="menu-category">
+                <h4>Drinks</h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Coffee</span><span class="menu-item-price">$4.00</span></span>
+                    <span class="menu-item-desc">Little Bear Roasters</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Hot Tea</span><span class="menu-item-price">$3.00</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Lemonade, Iced Tea, or Orange Juice</span><span class="menu-item-price">$4.00</span></span>
+                    <span class="menu-item-desc">16 oz</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Soda</span><span class="menu-item-price">$2.75</span></span>
+                    <span class="menu-item-desc">Coke, Diet Coke, Sprite, ginger ale, IBC Root Beer &middot; 12 oz</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Bagged Coffee</span><span class="menu-item-price">$19.99</span></span>
+                    <span class="menu-item-desc">Little Bear Roasters &middot; 12 oz</span>
+                  </li>
+                </ul>
+              </div>
+              <p class="menu-tax">Prices exclude NH Room and Meals tax (8.5%). Cookies by the Dozen and Cinnamon Rolls (Half Dozen) are sold tax-free.</p>
             </div>
-            <div class="menu-category">
-              <h4>Lunch</h4>
-              <ul class="menu-list">
-                <li>Reuben</li>
-                <li>Ham and Swiss</li>
-                <li>Ham or Veggie Club</li>
-                <li>Broccoli Cheddar Soup Bread Bowl</li>
-                <li>Chocolate Chip Cookies</li>
-              </ul>
-              <p class="menu-note">All sandwiches served with Cape Cod Chips.</p>
+
+            <!-- Take-Out -->
+            <div class="menu-panel" role="tabpanel" id="menu-takeout" aria-labelledby="tab-takeout" hidden>
+              <p class="menu-panel-lead">Breakfast, lunch &amp; drinks priced for 6. 48-hour notice preferred. Text <a href="sms:6032093032">603-209-3032</a>, email <a href="mailto:peter@odbread.com">peter@odbread.com</a>, or stop by the shop.</p>
+              <div class="menu-category">
+                <h4>Bread Loaves</h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Country Loaf</span><span class="menu-item-price">$12</span></span>
+                    <span class="menu-item-desc">Priced each</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Jalape&ntilde;o Cheddar</span><span class="menu-item-price">$14</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Dried Blueberries &amp; Poppy Seeds</span><span class="menu-item-price">$15</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Saut&eacute;ed Garlic &amp; Onion</span><span class="menu-item-price">$14</span></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-category">
+                <h4>Sweets</h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Cinnamon Rolls</span><span class="menu-item-price">$30</span></span>
+                    <span class="menu-item-desc">For 6</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Cookies by the Dozen</span><span class="menu-item-price">$28</span></span>
+                    <span class="menu-item-desc">Made to order</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-category">
+                <h4>Breakfast <span class="menu-category-tag">For 6</span></h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Breakfast Sandwich</span><span class="menu-item-price">$66</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Avocado Toast</span><span class="menu-item-price">$60</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Toast &amp; Cream Cheese</span><span class="menu-item-price">$33</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Toast &amp; Peanut Butter</span><span class="menu-item-price">$27</span></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-category">
+                <h4>Lunch <span class="menu-category-tag">For 6</span></h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Reuben</span><span class="menu-item-price">$84</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Ham &amp; Swiss</span><span class="menu-item-price">$66</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Ham, Turkey, or Veggie Club</span><span class="menu-item-price">$72</span></span>
+                    <span class="menu-item-desc">Veggie $60</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Broccoli Cheddar Soup</span><span class="menu-item-price">$72</span></span>
+                    <span class="menu-item-desc">Bread bowls</span>
+                  </li>
+                </ul>
+                <p class="menu-note">All sandwiches served with Cape Cod chips.</p>
+              </div>
+              <div class="menu-category">
+                <h4>Drinks</h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Coffee</span><span class="menu-item-price">$24</span></span>
+                    <span class="menu-item-desc">For 6</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Hot Tea</span><span class="menu-item-price">$18</span></span>
+                    <span class="menu-item-desc">For 6</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Lemonade, Iced Tea, or Orange Juice</span><span class="menu-item-price">$24</span></span>
+                    <span class="menu-item-desc">For 6 &middot; 16 oz</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Soda</span><span class="menu-item-price">$16.50</span></span>
+                    <span class="menu-item-desc">For 6 &middot; 12 oz</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Bagged Coffee</span><span class="menu-item-price">$19.99</span></span>
+                    <span class="menu-item-desc">Priced each &middot; 12 oz</span>
+                  </li>
+                </ul>
+              </div>
+              <p class="menu-note">Delivered orders include a 10% delivery fee and 20% gratuity. Larger quantities and mixed orders welcome &mdash; ask about coffee carafes and soup by the quart.</p>
+              <p class="menu-tax">Prices exclude NH Room and Meals tax (8.5%).</p>
+            </div>
+
+            <!-- Catering -->
+            <div class="menu-panel" role="tabpanel" id="menu-catering" aria-labelledby="tab-catering" hidden>
+              <p class="menu-panel-lead">48-hour notice preferred. Pickup at the shop. Breakfast, lunch &amp; drinks priced for a minimum of 6; loaves and bagged coffee priced each.</p>
+              <div class="menu-category">
+                <h4>Bread Loaves</h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Country Loaf</span><span class="menu-item-price">$12.00</span></span>
+                    <span class="menu-item-desc">Whole or sliced &middot; ~1000 g</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Jalape&ntilde;o Cheddar</span><span class="menu-item-price">$14.00</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Dried Blueberries &amp; Poppy Seeds</span><span class="menu-item-price">$15.00</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Saut&eacute;ed Garlic &amp; Onion</span><span class="menu-item-price">$14.00</span></span>
+                  </li>
+                </ul>
+                <p class="menu-note">Ideal for sharing boards and gift baskets.</p>
+              </div>
+              <div class="menu-category">
+                <h4>Breakfast <span class="menu-category-tag">For 6</span></h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Breakfast Sandwich</span><span class="menu-item-price">$66.00</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Avocado Toast</span><span class="menu-item-price">$60.00</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Toast &amp; Cream Cheese</span><span class="menu-item-price">$33.00</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Toast &amp; Peanut Butter</span><span class="menu-item-price">$27.00</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Cinnamon Rolls</span><span class="menu-item-price">$30.00</span></span>
+                    <span class="menu-item-desc">Add half dozens as needed</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-category">
+                <h4>Lunch <span class="menu-category-tag">For 6</span></h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Reuben</span><span class="menu-item-price">$84.00</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Ham &amp; Swiss</span><span class="menu-item-price">$66.00</span></span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Ham, Turkey, or Veggie Club</span><span class="menu-item-price">$72.00</span></span>
+                    <span class="menu-item-desc">Veggie $60</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Broccoli Cheddar Soup</span><span class="menu-item-price">$72.00</span></span>
+                    <span class="menu-item-desc">Bread bowls &middot; or ask about quart / half-gallon</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Cookies by the Dozen</span><span class="menu-item-price">$28.00</span></span>
+                    <span class="menu-item-desc">Made to order</span>
+                  </li>
+                </ul>
+                <p class="menu-note">Sandwiches include Cape Cod chips.</p>
+              </div>
+              <div class="menu-category">
+                <h4>Drinks</h4>
+                <ul class="menu-list">
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Coffee</span><span class="menu-item-price">$24.00</span></span>
+                    <span class="menu-item-desc">For 6 &middot; ask about group carafes</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Hot Tea</span><span class="menu-item-price">$18.00</span></span>
+                    <span class="menu-item-desc">For 6</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Lemonade, Iced Tea, or Orange Juice</span><span class="menu-item-price">$24.00</span></span>
+                    <span class="menu-item-desc">For 6 &middot; 16 oz</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Soda</span><span class="menu-item-price">$16.50</span></span>
+                    <span class="menu-item-desc">For 6 &middot; 12 oz</span>
+                  </li>
+                  <li>
+                    <span class="menu-item-row"><span class="menu-item-name">Bagged Coffee</span><span class="menu-item-price">$19.99</span></span>
+                    <span class="menu-item-desc">Priced each &middot; host gifts &amp; take-home</span>
+                  </li>
+                </ul>
+              </div>
+              <p class="menu-note">Larger quantities and mixed orders welcome &mdash; inquire at the counter or <a href="#contact">contact us</a>.</p>
+              <p class="menu-tax">Prices exclude NH Room and Meals tax (8.5%).</p>
             </div>
           </div>
           <div class="visit-card visit-hours">
