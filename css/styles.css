@@ -1386,3 +1386,161 @@ address {
   color: var(--brown-light);
   opacity: 0.85;
 }
+
+
+/* FIRST15 welcome offer popup */
+.promo-modal[hidden] {
+  display: none !important;
+}
+
+.promo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.promo-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(74, 59, 46, 0.35) 0%, rgba(42, 33, 24, 0.55) 100%);
+  animation: promo-fade-in 0.35s ease both;
+}
+
+.promo-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 26rem);
+  padding: 2rem 1.75rem 1.5rem;
+  text-align: center;
+  color: var(--iron-brown);
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -10%, rgba(198, 166, 118, 0.28) 0%, transparent 58%),
+    radial-gradient(ellipse 70% 40% at 85% 100%, rgba(167, 50, 43, 0.08) 0%, transparent 55%),
+    var(--cream);
+  border: 1px solid rgba(198, 166, 118, 0.65);
+  box-shadow: 0 24px 60px rgba(42, 33, 24, 0.28);
+  animation: promo-rise-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.promo-modal-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: transparent;
+  color: var(--brown-light);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.promo-modal-close:hover,
+.promo-modal-close:focus-visible {
+  color: var(--iron-brown);
+}
+
+.promo-modal-eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brick-red);
+}
+
+.promo-modal-title {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--iron-brown);
+}
+
+.promo-modal-desc {
+  margin: 0.75rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--brown-light);
+}
+
+.promo-modal-desc strong {
+  color: var(--brick-red);
+  font-weight: 600;
+}
+
+.promo-modal-code {
+  margin: 1.15rem auto 0;
+  width: fit-content;
+  padding: 0.55rem 1.15rem;
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  font-variant-numeric: lining-nums;
+  text-transform: uppercase;
+  color: var(--brick-red);
+  background: rgba(237, 232, 220, 0.85);
+  border: 1px solid rgba(198, 166, 118, 0.7);
+}
+
+.promo-modal-cta {
+  display: inline-flex;
+  margin-top: 1.25rem;
+  animation: promo-cta-pulse 2.8s ease-in-out 0.8s infinite;
+}
+
+.promo-modal-dismiss {
+  display: block;
+  margin: 0.85rem auto 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--brown-light);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.promo-modal-dismiss:hover,
+.promo-modal-dismiss:focus-visible {
+  color: var(--iron-brown);
+}
+
+@keyframes promo-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes promo-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes promo-cta-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(167, 50, 43, 0); }
+  50% { box-shadow: 0 0 0 6px rgba(167, 50, 43, 0.12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-modal-backdrop,
+  .promo-modal-panel,
+  .promo-modal-cta {
+    animation: none;
+  }
+}

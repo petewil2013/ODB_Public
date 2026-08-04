@@ -176,6 +176,72 @@
     }
   }
 
+  // FIRST15 welcome offer popup (once per browser, ~14 days)
+  (function initFirst15Promo() {
+    var modal = document.getElementById('first15Modal');
+    if (!modal) return;
+
+    var STORAGE_KEY = 'odb_first15_dismissed';
+    var DISMISS_DAYS = 14;
+    var SHOW_DELAY_MS = 1200;
+
+    function wasDismissedRecently() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return false;
+        var dismissedAt = parseInt(raw, 10);
+        if (isNaN(dismissedAt)) return false;
+        return Date.now() - dismissedAt < DISMISS_DAYS * 24 * 60 * 60 * 1000;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function rememberDismiss() {
+      try {
+        localStorage.setItem(STORAGE_KEY, String(Date.now()));
+      } catch (e) { /* ignore */ }
+    }
+
+    function openModal() {
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      var closeBtn = modal.querySelector('.promo-modal-close');
+      if (closeBtn) closeBtn.focus();
+      if (typeof gtag === 'function') {
+        gtag('event', 'promo_modal_view', { event_category: 'engagement', event_label: 'FIRST15' });
+      }
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      document.body.style.overflow = '';
+      rememberDismiss();
+    }
+
+    if (wasDismissedRecently()) return;
+
+    setTimeout(openModal, SHOW_DELAY_MS);
+
+    modal.querySelectorAll('[data-promo-close]').forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+
+    var cta = document.getElementById('first15CtaBtn');
+    if (cta) {
+      cta.addEventListener('click', function () {
+        rememberDismiss();
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_promo_cta', { event_category: 'conversion', event_label: 'FIRST15' });
+        }
+      });
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+  })();
+
   // Contact form — reCAPTCHA + POST to Google Apps Script (never write untrusted HTML to document)
   var contactForm = document.getElementById('contactForm');
   if (contactForm) {
