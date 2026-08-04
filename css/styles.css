@@ -810,26 +810,24 @@ main section[id] {
 .visit-grid {
   display: grid;
   gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.visit-menu {
+  grid-column: 1 / -1;
 }
 
 @media (min-width: 768px) {
   .visit-grid {
     grid-template-columns: 1fr 1fr;
-    align-items: start;
   }
 
   .visit-menu {
     grid-column: 1 / -1;
   }
-}
 
-@media (min-width: 1024px) {
-  .visit-grid {
-    grid-template-columns: 1.4fr 0.8fr 0.8fr;
-    gap: 2rem;
-  }
-
-  .visit-menu {
+  .visit-hours,
+  .visit-location {
     grid-column: auto;
   }
 }
@@ -942,7 +940,10 @@ main section[id] {
 }
 
 .menu-list li {
-  padding: 0.45rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0.5rem 0;
   padding-left: 1rem;
   position: relative;
   font-size: 0.9375rem;
@@ -959,10 +960,11 @@ main section[id] {
 }
 
 .menu-item-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 1.25rem;
   align-items: baseline;
-  gap: 0.65rem;
-  justify-content: space-between;
+  width: 100%;
 }
 
 .menu-item-name {
@@ -971,21 +973,27 @@ main section[id] {
   font-weight: 600;
   color: var(--iron-brown);
   line-height: 1.25;
+  min-width: 0;
 }
 
 .menu-item-price {
-  flex: 0 0 auto;
   font-family: var(--font-serif);
   font-size: 1.0625rem;
   font-weight: 700;
   color: var(--brick-red);
   white-space: nowrap;
+  text-align: right;
+  justify-self: end;
 }
 
 .menu-item-desc {
   display: block;
-  margin-top: 0.15rem;
-  font-size: 0.8125rem;
+  width: 100%;
+  margin-top: 0.2rem;
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  font-style: italic;
+  font-weight: 400;
   color: var(--brown-light);
   line-height: 1.4;
 }
