@@ -13,19 +13,19 @@
   --brown-light: #6B5B4A;
   --font-serif: 'EB Garamond', Georgia, serif;
   --font-sans: 'Libre Franklin', system-ui, sans-serif;
-  /* Clears fixed header; exact value set in JS (ResizeObserver). Fallback if JS is off. */
-  --site-header-offset: 10rem;
+  /* Clears fixed header + closure banner; exact value set in JS (ResizeObserver). Fallback if JS is off. */
+  --site-header-offset: 12.5rem;
 }
 
 @media (min-width: 641px) {
   :root {
-    --site-header-offset: 9rem;
+    --site-header-offset: 11.5rem;
   }
 }
 
 @media (min-width: 901px) {
   :root {
-    --site-header-offset: 8.5rem;
+    --site-header-offset: 10.5rem;
   }
 }
 
@@ -118,11 +118,10 @@ a:hover {
   border-bottom: 1px solid rgba(74, 59, 46, 0.08);
 }
 
-/* Pre-sale announcement (Phase 1 — lead capture) */
-.presale-banner {
+/* Temporary construction closure banner */
+.closure-banner {
   width: 100%;
   background-color: #3d3128;
-  /* Layered gradients + grain (no large image asset — fast LCP). Optional: add a compressed WebP texture here. */
   background-image:
     linear-gradient(
       115deg,
@@ -131,19 +130,11 @@ a:hover {
       rgba(74, 59, 46, 0.96) 100%
     ),
     radial-gradient(ellipse 120% 180% at 0% 50%, rgba(198, 166, 118, 0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 100% 160% at 100% 30%, rgba(167, 50, 43, 0.12) 0%, transparent 50%),
-    repeating-linear-gradient(
-      -12deg,
-      transparent,
-      transparent 2px,
-      rgba(249, 245, 236, 0.02) 2px,
-      rgba(249, 245, 236, 0.02) 3px
-    );
-  background-size: auto, auto, auto, auto;
+    radial-gradient(ellipse 100% 160% at 100% 30%, rgba(167, 50, 43, 0.18) 0%, transparent 50%);
   border-bottom: 1px solid rgba(198, 166, 118, 0.28);
 }
 
-.presale-banner-inner {
+.closure-banner-inner {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -153,99 +144,65 @@ a:hover {
   row-gap: 0.35rem;
   max-width: 64rem;
   margin: 0 auto;
-  padding: 0.4rem 0.75rem;
+  padding: 0.45rem 0.75rem;
 }
 
 @media (min-width: 521px) {
-  .presale-banner-inner {
+  .closure-banner-inner {
     column-gap: 1.25rem;
-    row-gap: 0.75rem;
     padding: 0.55rem 1.5rem;
   }
 }
 
-.presale-banner-emblem {
-  display: none;
-  flex-shrink: 0;
-  align-items: center;
-}
-
-@media (min-width: 520px) {
-  .presale-banner-emblem {
-    display: flex;
-  }
-}
-
-.presale-banner-emblem img.presale-banner-loaf {
-  display: block;
-  width: 56px;
-  height: 34px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 3px;
-  vertical-align: middle;
-}
-
-.presale-banner-text {
+.closure-banner-text {
   margin: 0;
   flex: 1 1 min(100%, 15rem);
   min-width: 0;
   font-size: 0.8125rem;
-  line-height: 1.35;
-  color: var(--brick-red);
+  line-height: 1.4;
+  color: var(--cream);
   text-align: center;
 }
 
 @media (min-width: 521px) {
-  .presale-banner-emblem img.presale-banner-loaf {
-    width: 72px;
-    height: 44px;
-  }
-
-  .presale-banner-text {
+  .closure-banner-text {
     font-size: 0.9375rem;
   }
 }
 
-.presale-banner-headline {
+.closure-banner-headline {
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: var(--brick-red);
+  color: #f0c9c6;
 }
 
-.presale-banner-sep {
+.closure-banner-sep {
   display: none;
   margin: 0 0.35rem;
-  color: var(--brick-red);
-  opacity: 0.85;
+  color: var(--warm-sepia);
+  opacity: 0.9;
   font-weight: 400;
 }
 
-.presale-banner-sub {
+.closure-banner-sub {
   display: inline;
   font-weight: 400;
-  color: var(--brick-red);
-  opacity: 0.92;
+  color: rgba(249, 245, 236, 0.92);
 }
 
 @media (max-width: 520px) {
-  .presale-banner-sub::before {
+  .closure-banner-sub::before {
     content: '\00a0·\00a0';
   }
 }
 
 @media (min-width: 521px) {
-  .presale-banner-sep {
+  .closure-banner-sep {
     display: inline;
-  }
-
-  .presale-banner-sub {
-    display: inline;
-    margin-top: 0;
   }
 }
 
-.btn-presale {
+.btn-closure {
   flex-shrink: 0;
   padding: 0.38rem 0.85rem;
   font-size: 0.75rem;
@@ -258,14 +215,14 @@ a:hover {
   border-radius: 2px;
 }
 
-.btn-presale:hover {
+.btn-closure:hover {
   background: #8a2924;
   color: var(--cream) !important;
   border-color: #8a2924;
 }
 
 @media (min-width: 521px) {
-  .btn-presale {
+  .btn-closure {
     padding: 0.45rem 1.1rem;
     font-size: 0.8125rem;
   }
@@ -813,7 +770,8 @@ main section[id] {
   grid-template-columns: 1fr;
 }
 
-.visit-menu {
+.visit-menu,
+.visit-closure {
   grid-column: 1 / -1;
 }
 
@@ -822,7 +780,8 @@ main section[id] {
     grid-template-columns: 1fr 1fr;
   }
 
-  .visit-menu {
+  .visit-menu,
+  .visit-closure {
     grid-column: 1 / -1;
   }
 
@@ -851,6 +810,85 @@ main section[id] {
   font-weight: 600;
   color: var(--brick-red);
   margin: 0 0 1rem;
+}
+
+.visit-closure {
+  text-align: center;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% 0%, rgba(198, 166, 118, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 45% at 50% 100%, rgba(167, 50, 43, 0.06) 0%, transparent 50%);
+  border-color: rgba(198, 166, 118, 0.45);
+}
+
+.visit-closure-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brick-red);
+}
+
+.visit-closure h3 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+}
+
+.visit-closure-lead {
+  margin: 0 auto 1rem;
+  max-width: 32rem;
+  color: var(--brown-light);
+}
+
+.visit-closure-dates {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--iron-brown);
+}
+
+.visit-closure-reopen {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 600;
+  color: var(--brick-red);
+}
+
+.visit-closure-aside {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(74, 59, 46, 0.16);
+}
+
+.visit-closure-aside-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brick-red);
+}
+
+.visit-closure-aside-body {
+  margin: 0;
+  font-size: 0.975rem;
+  line-height: 1.5;
+  color: var(--brown-light);
+}
+
+.visit-closure-aside-body strong {
+  font-weight: 600;
+  color: var(--iron-brown);
+}
+
+.hours-note {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+  color: var(--brown-light);
 }
 
 .menu-tabs {
