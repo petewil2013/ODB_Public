@@ -812,6 +812,13 @@ main section[id] {
   margin: 0 0 1rem;
 }
 
+.visit-parking {
+  margin: -0.35rem 0 1rem;
+  font-size: 0.9rem;
+  color: var(--brown-light);
+  line-height: 1.5;
+}
+
 .visit-harvest {
   text-align: center;
   background-image:
