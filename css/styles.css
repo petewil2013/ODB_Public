@@ -13,7 +13,7 @@
   --brown-light: #6B5B4A;
   --font-serif: 'EB Garamond', Georgia, serif;
   --font-sans: 'Libre Franklin', system-ui, sans-serif;
-  /* Clears fixed header + closure banner; exact value set in JS (ResizeObserver). Fallback if JS is off. */
+  /* Clears fixed header + promo banner; exact value set in JS (ResizeObserver). Fallback if JS is off. */
   --site-header-offset: 12.5rem;
 }
 
@@ -119,7 +119,7 @@ a:hover {
 }
 
 /* Temporary construction closure banner */
-.closure-banner {
+.promo-banner {
   width: 100%;
   background-color: #3d3128;
   background-image:
@@ -134,7 +134,7 @@ a:hover {
   border-bottom: 1px solid rgba(198, 166, 118, 0.28);
 }
 
-.closure-banner-inner {
+.promo-banner-inner {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -148,13 +148,13 @@ a:hover {
 }
 
 @media (min-width: 521px) {
-  .closure-banner-inner {
+  .promo-banner-inner {
     column-gap: 1.25rem;
     padding: 0.55rem 1.5rem;
   }
 }
 
-.closure-banner-text {
+.promo-banner-text {
   margin: 0;
   flex: 1 1 min(100%, 15rem);
   min-width: 0;
@@ -165,18 +165,18 @@ a:hover {
 }
 
 @media (min-width: 521px) {
-  .closure-banner-text {
+  .promo-banner-text {
     font-size: 0.9375rem;
   }
 }
 
-.closure-banner-headline {
+.promo-banner-headline {
   font-weight: 600;
   letter-spacing: 0.02em;
   color: #f0c9c6;
 }
 
-.closure-banner-sep {
+.promo-banner-sep {
   display: none;
   margin: 0 0.35rem;
   color: var(--warm-sepia);
@@ -184,25 +184,25 @@ a:hover {
   font-weight: 400;
 }
 
-.closure-banner-sub {
+.promo-banner-sub {
   display: inline;
   font-weight: 400;
   color: rgba(249, 245, 236, 0.92);
 }
 
 @media (max-width: 520px) {
-  .closure-banner-sub::before {
+  .promo-banner-sub::before {
     content: '\00a0·\00a0';
   }
 }
 
 @media (min-width: 521px) {
-  .closure-banner-sep {
+  .promo-banner-sep {
     display: inline;
   }
 }
 
-.btn-closure {
+.btn-promo {
   flex-shrink: 0;
   padding: 0.38rem 0.85rem;
   font-size: 0.75rem;
@@ -215,14 +215,14 @@ a:hover {
   border-radius: 2px;
 }
 
-.btn-closure:hover {
+.btn-promo:hover {
   background: #8a2924;
   color: var(--cream) !important;
   border-color: #8a2924;
 }
 
 @media (min-width: 521px) {
-  .btn-closure {
+  .btn-promo {
     padding: 0.45rem 1.1rem;
     font-size: 0.8125rem;
   }
@@ -771,7 +771,7 @@ main section[id] {
 }
 
 .visit-menu,
-.visit-closure {
+.visit-harvest {
   grid-column: 1 / -1;
 }
 
@@ -781,7 +781,7 @@ main section[id] {
   }
 
   .visit-menu,
-  .visit-closure {
+  .visit-harvest {
     grid-column: 1 / -1;
   }
 
@@ -812,7 +812,7 @@ main section[id] {
   margin: 0 0 1rem;
 }
 
-.visit-closure {
+.visit-harvest {
   text-align: center;
   background-image:
     radial-gradient(ellipse 90% 55% at 50% 0%, rgba(198, 166, 118, 0.18) 0%, transparent 55%),
@@ -820,7 +820,7 @@ main section[id] {
   border-color: rgba(198, 166, 118, 0.45);
 }
 
-.visit-closure-eyebrow {
+.visit-harvest-eyebrow {
   margin: 0 0 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
@@ -829,66 +829,67 @@ main section[id] {
   color: var(--brick-red);
 }
 
-.visit-closure h3 {
+.visit-harvest h3 {
   margin: 0 0 0.85rem;
   font-size: clamp(1.5rem, 3vw, 1.85rem);
 }
 
-.visit-closure-lead {
-  margin: 0 auto 1rem;
+.visit-harvest-lead {
+  margin: 0 auto 1.25rem;
   max-width: 32rem;
   color: var(--brown-light);
 }
 
-.visit-closure-dates {
-  margin: 0 0 0.35rem;
-  font-family: var(--font-serif);
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  font-weight: 600;
-  line-height: 1.35;
-  color: var(--iron-brown);
-}
-
-.visit-closure-reopen {
-  margin: 0 0 1.25rem;
-  font-family: var(--font-serif);
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  font-weight: 600;
-  color: var(--brick-red);
-}
-
-.visit-closure-aside {
+.harvest-list {
+  list-style: none;
+  margin: 0 auto 1.5rem;
+  padding: 0;
   max-width: 28rem;
-  margin: 0 auto;
-  padding-top: 1.15rem;
-  border-top: 1px solid rgba(74, 59, 46, 0.16);
+  text-align: left;
 }
 
-.visit-closure-aside-label {
-  margin: 0 0 0.45rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.harvest-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(74, 59, 46, 0.12);
+  font-size: 1rem;
+}
+
+.harvest-list li:last-child {
+  border-bottom: none;
+}
+
+.harvest-name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--iron-brown);
+}
+
+.harvest-price {
+  flex-shrink: 0;
+  font-weight: 600;
   color: var(--brick-red);
 }
 
-.visit-closure-aside-body {
+.visit-harvest-cta {
   margin: 0;
-  font-size: 0.975rem;
-  line-height: 1.5;
-  color: var(--brown-light);
-}
-
-.visit-closure-aside-body strong {
-  font-weight: 600;
-  color: var(--iron-brown);
 }
 
 .hours-note {
   margin: 1rem 0 0;
   font-size: 0.875rem;
   color: var(--brown-light);
+}
+
+.menu-disclaimer {
+  margin: 1.25rem 0 0;
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--brown-light);
+  line-height: 1.45;
 }
 
 .menu-tabs {
