@@ -775,6 +775,42 @@ main section[id] {
   grid-column: 1 / -1;
 }
 
+.visit-menu--app {
+  text-align: center;
+}
+
+.visit-app-lead {
+  margin: 0 auto 1.25rem;
+  max-width: 36rem;
+  color: var(--brown-light);
+  line-height: 1.55;
+}
+
+.visit-bake-list {
+  list-style: none;
+  margin: 0 auto 1.5rem;
+  padding: 0;
+  max-width: 22rem;
+  text-align: left;
+}
+
+.visit-bake-list li {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--iron-brown);
+  padding: 0.45rem 0;
+  border-bottom: 1px dotted rgba(74, 59, 46, 0.22);
+}
+
+.visit-bake-list li:last-child {
+  border-bottom: none;
+}
+
+.visit-app-cta {
+  margin: 0 0 1.25rem;
+}
+
 @media (min-width: 768px) {
   .visit-grid {
     grid-template-columns: 1fr 1fr;
