@@ -1,0 +1,49 @@
+# Auto-merge friday-launch-oct9 → main on Friday, Oct 9, 2026 at 2:00 PM Eastern.
+# EDT (UTC-4) → 18:00 UTC. Delete this workflow after a successful go-live.
+name: Friday go-live Oct 9
+
+on:
+  schedule:
+    - cron: "0 18 9 10 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: friday-golive-oct9
+  cancel-in-progress: false
+
+jobs:
+  merge-launch-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Merge friday-launch-oct9 into main
+        env:
+          BRANCH: friday-launch-oct9
+        run: |
+          set -euo pipefail
+          git config user.name "ODB Deploy Bot"
+          git config user.email "peter@odbread.com"
+
+          if ! git rev-parse --verify "origin/${BRANCH}" >/dev/null 2>&1; then
+            echo "Branch origin/${BRANCH} not found — nothing to merge."
+            exit 1
+          fi
+
+          # Skip if already merged
+          if git merge-base --is-ancestor "origin/${BRANCH}" origin/main; then
+            echo "origin/${BRANCH} is already fully merged into main. Nothing to do."
+            exit 0
+          fi
+
+          git checkout main
+          git pull --ff-only origin main
+          git merge "origin/${BRANCH}" --no-ff -m "Go live: Saturday pre-order pickup model (Oct 9, 2026 2pm ET)"
+          git push origin main
+          echo "Merged ${BRANCH} → main. GitHub Pages should update within a few minutes."
