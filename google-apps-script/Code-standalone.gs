@@ -91,7 +91,7 @@ function doPost(e) {
     if (isValidEmail(email)) {
       mailOpts.replyTo = email;
     }
-    GmailApp.sendEmail('support@odbread.com', 'Panis Vivus - New Contact: ' + safeName, emailBody, mailOpts);
+    GmailApp.sendEmail('peter@odbread.com', 'Panis Vivus - New Contact: ' + safeName, emailBody, mailOpts);
     
     return jsonResponse({
       ok: true,
@@ -101,7 +101,7 @@ function doPost(e) {
     
   } catch (err) {
     Logger.log(err.toString());
-    return jsonResponse({ ok: false, title: 'Error', message: 'Something went wrong. Please try again or email us at support@odbread.com' });
+    return jsonResponse({ ok: false, title: 'Error', message: 'Something went wrong. Please try again or email us at peter@odbread.com' });
   }
 }
 

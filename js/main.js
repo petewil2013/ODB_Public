@@ -364,7 +364,7 @@
                 return;
               }
               if (payload.okHttp === false) {
-                showContactOutcome('Error', 'The server could not process your message. Please try again or email support@odbread.com.', true);
+                showContactOutcome('Error', 'The server could not process your message. Please try again or email peter@odbread.com.', true);
                 return;
               }
               var parsed = parseLegacyHtmlResponse(payload.text || '');

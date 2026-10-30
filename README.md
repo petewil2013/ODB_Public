@@ -28,7 +28,7 @@ The contact form sends submissions to your Gmail and a Google Sheet. See **SETUP
 ### Contact Info
 Contact details are set to:
 - **Phone:** 603-209-3032
-- **Email:** support@odbread.com
+- **Email:** peter@odbread.com
 
 ### Simply Bread App Link
 When your bakery is live on Simply Bread, the Order section already links to the app. You may want to add a direct storefront URL if Simply Bread provides one for your bakery.
