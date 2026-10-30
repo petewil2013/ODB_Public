@@ -1271,6 +1271,26 @@ main section[id] {
   }
 }
 
+.contact-grid--single {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .contact-grid--single {
+    grid-template-columns: 1fr;
+    max-width: 36rem;
+  }
+}
+
+.contact-person {
+  font-size: 1.125rem;
+}
+
+.contact-company {
+  margin-top: 1.5rem;
+}
+
 .contact-info h3 {
   font-size: 1.125rem;
   margin: 0 0 1rem;
